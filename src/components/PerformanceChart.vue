@@ -1,17 +1,5 @@
 <script setup lang="ts">
-import {
-  CategoryScale,
-  Chart as ChartJS,
-  Filler,
-  Legend,
-  LinearScale,
-  LineElement,
-  PointElement,
-  Title,
-} from 'chart.js'
 import { Line } from 'vue-chartjs'
-
-ChartJS.register(CategoryScale, LinearScale, LineElement, Title, Legend, PointElement, Filler)
 
 const chartData = {
   datasets: [
@@ -67,7 +55,7 @@ const chartOptions = {
 </script>
 
 <template>
-  <Line :options="chartOptions" :data="chartData" />
+  <Line :options="chartOptions as any" :data="chartData as any" />
 </template>
 
 <style scoped></style>
