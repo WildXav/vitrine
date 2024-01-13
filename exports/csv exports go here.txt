@@ -1,0 +1,3 @@
+Place the CSV exports of your trades here.
+Supported platforms:
+- Bybit

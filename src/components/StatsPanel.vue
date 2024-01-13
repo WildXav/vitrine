@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 import { computed } from 'vue'
-import type { PeriodData } from '@/components/interfaces/period-data'
-import { formatPct } from './utils/format'
+import type { PeriodData } from '@/interfaces/period-data'
+import { formatPct } from '@/utils/format'
 import WinratePie from '@/components/WinratePie.vue'
 import StatsList from '@/components/StatsList.vue'
 
@@ -20,7 +20,8 @@ const props = defineProps({
 })
 
 const winrate = computed(() => {
-  return props.data?.winners / (props.data?.winners + props.data?.losers)
+  const total = props.data.winners + props.data.losers
+  return total ? props.data.winners : total
 })
 </script>
 

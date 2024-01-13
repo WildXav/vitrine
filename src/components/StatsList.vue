@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { PeriodData } from '@/components/interfaces/period-data'
+import type { PeriodData } from '@/interfaces/period-data'
 import type { PropType } from 'vue'
 
 interface StatsEntry {

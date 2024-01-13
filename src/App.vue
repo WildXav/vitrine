@@ -5,48 +5,25 @@ import type { StatsPanelDef } from '@/components/StatsPanel.vue'
 import StatsPanel from '@/components/StatsPanel.vue'
 import type { ComputedRef } from 'vue'
 import { computed, ref } from 'vue'
-import type { PeriodData } from '@/components/interfaces/period-data'
+import type { PeriodData } from '@/interfaces/period-data'
+import TradeData from '@/trade_data.json'
 
-const lastUpdatedStr = dayjs('1999-01-01').fromNow()
+const lastUpdatedStr = dayjs.unix(TradeData.updatedAt).fromNow()
 const statsPanels: StatsPanelDef[] = [
   {
     id: 'overall',
     title: 'Overall Evaluation',
-    data: {
-      losers: 40,
-      winners: 28,
-      expectancy: 2.13,
-      avgWinPerf: 7.77,
-      avgLosPerf: -4.05,
-      return: 36.3,
-      maxDrawdown: 62.9,
-    },
+    data: TradeData.stats.overall,
   },
   {
     id: 'monthly',
     title: 'Monthly Stats',
-    data: {
-      losers: 36,
-      winners: 25,
-      expectancy: 2.84,
-      avgWinPerf: 7.95,
-      avgLosPerf: -3.82,
-      return: 46.67,
-      maxDrawdown: 62.9,
-    },
+    data: TradeData.stats.monthly,
   },
   {
     id: 'weekly',
     title: 'Weekly Stats',
-    data: {
-      losers: 15,
-      winners: 15,
-      expectancy: 2.84,
-      avgWinPerf: 7.95,
-      avgLosPerf: -3.82,
-      return: 46.67,
-      maxDrawdown: 62.9,
-    },
+    data: TradeData.stats.weekly,
   },
 ]
 const activePanelId = ref('overall')
@@ -73,7 +50,7 @@ const activePanelData: ComputedRef<PeriodData | null> = computed(() => {
           <h2 class="card-title text-lg">Performance</h2>
 
           <div class="flex-1">
-            <PerformanceChart />
+            <PerformanceChart :profit-evolution="TradeData.profitEvolution" />
           </div>
         </div>
       </div>
