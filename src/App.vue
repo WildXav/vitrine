@@ -139,7 +139,10 @@ const chartOptions = {
       </div>
 
       <footer class="footer items-center justify-end p-1">
-        <span class="block text-xs">Generated with ♥ using <a class="link">vitrine</a></span>
+        <span class="block text-xs">
+          Generated with ♥ using
+          <a class="link" target="_blank" href="https://github.com/WildXav/vitrine">vitrine</a>
+        </span>
       </footer>
     </main>
   </div>
