@@ -20,20 +20,20 @@ const statsEntries: StatsEntry[] = [
     label: 'Expectancy',
   },
   {
-    prop: 'avgWinPerf',
-    label: 'Avg. Winner Performance',
+    prop: 'longPnl',
+    label: 'Long P&L',
   },
   {
-    prop: 'avgLosPerf',
-    label: 'Avg. Loser Performance',
+    prop: 'shortPnl',
+    label: 'Short P&L',
   },
   {
-    prop: 'return',
-    label: 'Return',
+    prop: 'avgWin',
+    label: 'Average Win',
   },
   {
-    prop: 'maxDrawdown',
-    label: 'Max. Drawdown',
+    prop: 'avgLoss',
+    label: 'Average Loss',
   },
 ]
 </script>
@@ -46,7 +46,7 @@ const statsEntries: StatsEntry[] = [
       class="flex w-full justify-between border-b-primary-content border-b-2 max-w-96"
     >
       <span>{{ entry.label }}</span>
-      <span class="font-bold">{{ data[entry.prop] }}</span>
+      <span class="font-bold">{{ data[entry.prop].toFixed(2) }}</span>
     </div>
   </div>
 </template>

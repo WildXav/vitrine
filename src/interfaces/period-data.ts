@@ -1,9 +1,9 @@
 export interface PeriodData {
-  losers: number
   winners: number
+  losers: number
   expectancy: number
-  avgWinPerf: number
-  avgLosPerf: number
-  return: number
-  maxDrawdown: number
+  longPnl: number
+  shortPnl: number
+  avgWin: number
+  avgLoss: number
 }

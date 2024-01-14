@@ -16,6 +16,7 @@ import {
 } from 'chart.js'
 
 dayjs.extend(relativeTime)
+
 ChartJS.register(
   CategoryScale,
   LinearScale,

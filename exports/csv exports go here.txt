@@ -1,3 +1,3 @@
-Place the CSV exports of your trades here.
+Place the CSV exports of your Closed P&L here.
 Supported platforms:
 - Bybit

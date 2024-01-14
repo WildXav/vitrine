@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import dayjs from 'dayjs'
-import PerformanceChart from '@/components/PerformanceChart.vue'
+import PerformanceChart from '@/components/PnlChart.vue'
 import type { StatsPanelDef } from '@/components/StatsPanel.vue'
 import StatsPanel from '@/components/StatsPanel.vue'
 import type { ComputedRef } from 'vue'
@@ -33,7 +33,7 @@ const activePanelData: ComputedRef<PeriodData | null> = computed(() => {
 </script>
 
 <template>
-  <div class="w-full h-full flex flex-col max-w-screen-lg p-3 lg:px-0">
+  <div class="w-full h-full flex flex-col max-w-screen-lg px-3 pb-3 lg:px-0 sm:pt-3">
     <header class="navbar p-1">
       <div class="flex-1">
         <h1 class="text-xl font-bold">Xav's Vitrine</h1>
@@ -44,10 +44,10 @@ const activePanelData: ComputedRef<PeriodData | null> = computed(() => {
       </div>
     </header>
 
-    <main class="flex flex-col flex-1">
+    <main class="flex flex-col flex-1 overflow-hidden">
       <div class="card w-full basis-2/5 grow-0 overflow-hidden">
         <div class="card-body h-full p-4">
-          <h2 class="card-title text-lg">Performance</h2>
+          <h2 class="card-title text-lg">P&L Chart</h2>
 
           <div class="flex-1">
             <PerformanceChart :profit-evolution="TradeData.profitEvolution" />
@@ -87,7 +87,7 @@ const activePanelData: ComputedRef<PeriodData | null> = computed(() => {
         </div>
       </div>
 
-      <footer class="footer items-center justify-end p-1">
+      <footer class="footer items-center justify-end pt-3">
         <span class="block text-xs">
           Generated with ♥ using
           <a class="link" target="_blank" href="https://github.com/WildXav/vitrine">vitrine</a>

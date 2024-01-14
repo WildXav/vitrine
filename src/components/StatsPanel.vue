@@ -21,17 +21,17 @@ const props = defineProps({
 
 const winrate = computed(() => {
   const total = props.data.winners + props.data.losers
-  return total ? props.data.winners : total
+  return total ? props.data.winners / total : 0
 })
 </script>
 
 <template>
   <div class="flex flex-col w-full h-full">
-    <div class="flex basis-36 justify-center gap-x-8 md:gap-x-2 lg:gap-x-8 overflow-hidden">
+    <div class="flex shrink basis-36 justify-center gap-x-8 md:gap-x-2 lg:gap-x-8 overflow-hidden">
       <div class="relative basis-2/5 overflow-hidden">
         <WinratePie :winrate="winrate" />
         <div class="absolute top-0 w-full h-full flex flex-col items-center justify-center">
-          <span class="text-xl font-bold">{{ formatPct(winrate, 1) }}</span>
+          <span class="text-xl font-bold">{{ formatPct(winrate, 0) }}</span>
           <span class="text-xs">Winrate</span>
         </div>
       </div>
@@ -49,7 +49,7 @@ const winrate = computed(() => {
       </div>
     </div>
 
-    <div class="flex-1 mt-5">
+    <div class="flex-auto shrink-0 mt-5">
       <StatsList :data="data" />
     </div>
   </div>
