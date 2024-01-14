@@ -6,28 +6,28 @@
       "winners": 0,
       "losers": 0,
       "expectancy": 0,
-      "avgWinPerf": 0,
-      "avgLosPerf": 0,
-      "return": 0,
-      "maxDrawdown": 0
+      "longPnl": 0,
+      "shortPnl": 0,
+      "avgWin": 0,
+      "avgLoss": 0
     },
     "monthly": {
       "winners": 0,
       "losers": 0,
       "expectancy": 0,
-      "avgWinPerf": 0,
-      "avgLosPerf": 0,
-      "return": 0,
-      "maxDrawdown": 0
+      "longPnl": 0,
+      "shortPnl": 0,
+      "avgWin": 0,
+      "avgLoss": 0
     },
     "weekly": {
       "winners": 0,
       "losers": 0,
       "expectancy": 0,
-      "avgWinPerf": 0,
-      "avgLosPerf": 0,
-      "return": 0,
-      "maxDrawdown": 0
+      "longPnl": 0,
+      "shortPnl": 0,
+      "avgWin": 0,
+      "avgLoss": 0
     }
   }
 }
