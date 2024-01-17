@@ -36,7 +36,7 @@ const activePanelData: ComputedRef<PeriodData | null> = computed(() => {
   <div class="w-full h-full flex flex-col max-w-screen-lg px-3 pb-3 lg:px-0 sm:pt-3">
     <header class="navbar p-1">
       <div class="flex-1">
-        <h1 class="text-xl font-bold">Xav's Vitrine</h1>
+        <h1 class="text-xl font-bold">Xav's Trading Journey</h1>
       </div>
 
       <div class="flex-none">
