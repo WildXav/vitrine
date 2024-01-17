@@ -15,7 +15,7 @@ const pieData = computed(() => {
       {
         borderColor: '#9f7736',
         label: 'My First Dataset',
-        data: [props.winrate, 1],
+        data: [props.winrate, 1 - props.winrate],
         backgroundColor: ['#dca54c', 'transparent'],
       },
     ],
