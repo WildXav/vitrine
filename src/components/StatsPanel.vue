@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import { computed } from 'vue'
 import type { PeriodData } from '@/interfaces/period-data'
 import { formatPct } from '@/utils/format'
 import WinratePie from '@/components/WinratePie.vue'
@@ -12,16 +11,11 @@ export interface StatsPanelDef {
   data: PeriodData
 }
 
-const props = defineProps({
+defineProps({
   data: {
     type: Object as PropType<PeriodData>,
     required: true,
   },
-})
-
-const winrate = computed(() => {
-  const total = props.data.winners + props.data.losers
-  return total ? props.data.winners / total : 0
 })
 </script>
 
@@ -29,9 +23,9 @@ const winrate = computed(() => {
   <div class="flex flex-col w-full h-full">
     <div class="flex shrink basis-36 justify-center gap-x-8 md:gap-x-2 lg:gap-x-8 overflow-hidden">
       <div class="relative basis-2/5 overflow-hidden">
-        <WinratePie :winrate="winrate" />
+        <WinratePie :winrate="data.winrate" />
         <div class="absolute top-0 w-full h-full flex flex-col items-center justify-center">
-          <span class="text-xl font-bold">{{ formatPct(winrate, 0) }}</span>
+          <span class="text-xl font-bold">{{ formatPct(data.winrate, 0) }}</span>
           <span class="text-xs">Winrate</span>
         </div>
       </div>
