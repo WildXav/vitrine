@@ -40,7 +40,7 @@ const activePanelData: ComputedRef<PeriodData | null> = computed(() => {
       </div>
 
       <div class="flex-none">
-        <span class="text-xs">Last updated {{ lastUpdatedStr }}</span>
+        <span class="text-xs">Updated {{ lastUpdatedStr }}</span>
       </div>
     </header>
 
