@@ -19,7 +19,7 @@ const chartData = {
         above: '#dca54c', // Area will be red above the origin
         below: 'transparent', // And blue below the origin
       },
-      data: props.profitEvolution?.map((val, i) => ({ x: `${i}`, y: val })),
+      data: props.profitEvolution?.map((val, i) => ({ x: `${i + 1}`, y: val })),
       lineTension: 0.4,
     },
   ],
