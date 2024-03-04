@@ -1,0 +1,8 @@
+{
+  "apiHost": "https://api.bybit.com",
+  "apiKey": "",
+  "apiSecret": "",
+  "apiRecvWindow": 5000,
+  "vitrinePageGitSSH": "",
+  "vitrinePageDomain": ""
+}
