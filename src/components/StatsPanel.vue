@@ -21,8 +21,10 @@ defineProps({
 
 <template>
   <div class="flex flex-col w-full h-full">
-    <div class="flex shrink basis-36 justify-center gap-x-8 md:gap-x-2 lg:gap-x-8 overflow-hidden">
-      <div class="relative basis-2/5 overflow-hidden">
+    <div
+      class="flex shrink justify-evenly basis-36 max-w-96 w-full mx-auto gap-x-8 md:gap-x-2 lg:gap-x-8 overflow-hidden min-w-fit"
+    >
+      <div class="relative overflow-hidden w-[125px]">
         <WinratePie :winrate="data.winrate" />
         <div class="absolute top-0 w-full h-full flex flex-col items-center justify-center">
           <span class="text-xl font-bold">{{ formatPct(data.winrate, 0) }}</span>
@@ -43,7 +45,7 @@ defineProps({
       </div>
     </div>
 
-    <div class="flex-auto shrink-0 mt-5">
+    <div class="flex-auto shrink-0 mt-5 px-4 lg:px-0">
       <StatsList :data="data" />
     </div>
   </div>

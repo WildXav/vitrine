@@ -33,7 +33,9 @@ const activePanelData: ComputedRef<PeriodData | null> = computed(() => {
 </script>
 
 <template>
-  <div class="w-full h-full flex flex-col max-w-screen-lg px-3 pb-3 lg:px-0 sm:pt-3">
+  <div
+    class="w-full h-full flex flex-col max-w-screen-lg xl:max-w-screen-xl px-3 pb-3 lg:px-0 sm:pt-3"
+  >
     <header class="navbar p-1">
       <div class="flex-1">
         <h1 class="text-xl font-bold">Xav's Trading Journey</h1>
@@ -55,7 +57,7 @@ const activePanelData: ComputedRef<PeriodData | null> = computed(() => {
         </div>
       </div>
 
-      <div class="flex flex-col flex-1 md:hidden">
+      <div class="flex flex-col flex-1 lg:hidden">
         <div role="tablist" class="tabs tabs-lifted">
           <a
             v-for="panel in statsPanels"
@@ -78,8 +80,8 @@ const activePanelData: ComputedRef<PeriodData | null> = computed(() => {
         </div>
       </div>
 
-      <div class="flex-1 justify-between gap-x-0 lg:gap-x-4 hidden md:flex">
-        <div v-for="panel in statsPanels" :key="panel.id" class="card basis-1/3 h-full">
+      <div class="flex-1 justify-between gap-x-0 lg:gap-x-4 hidden lg:grid grid-cols-3">
+        <div v-for="panel in statsPanels" :key="panel.id" class="card h-full">
           <div class="card-body h-full p-4">
             <h2 class="card-title text-lg">{{ panel.title }}</h2>
             <div class="flex-1"><StatsPanel :data="panel.data" /></div>

@@ -39,11 +39,11 @@ const statsEntries: StatsEntry[] = [
 </script>
 
 <template>
-  <div class="flex flex-col gap-y-3 items-center">
+  <div class="flex flex-col gap-y-3 items-center max-w-3xl mx-auto">
     <div
       v-for="entry in statsEntries"
       :key="entry.prop"
-      class="flex w-full justify-between border-b-primary-content border-b-2 max-w-96"
+      class="flex w-full justify-between border-b-primary-content border-b-2"
     >
       <span>{{ entry.label }}</span>
       <span class="font-bold">{{ data[entry.prop].toFixed(2) }}</span>
