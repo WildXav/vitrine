@@ -26,6 +26,11 @@ const chartData = {
 }
 
 const chartOptions = {
+  scales: {
+    y: {
+      position: 'right',
+    },
+  },
   maintainAspectRatio: false,
   elements: {
     point: {
