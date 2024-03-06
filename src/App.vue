@@ -38,6 +38,11 @@ const activePanelData: ComputedRef<PeriodData | null> = computed(() => {
   >
     <header class="navbar p-1">
       <div class="flex-1">
+        <div class="avatar">
+          <div class="w-10 mr-2 mask mask-triangle">
+            <img src="/avatar.png" alt="avatar" />
+          </div>
+        </div>
         <h1 class="text-xl font-bold">Xav's Trading Journey</h1>
       </div>
 
