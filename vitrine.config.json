@@ -3,6 +3,6 @@
   "apiKey": "",
   "apiSecret": "",
   "apiRecvWindow": 5000,
-  "vitrinePageGitSSH": "",
-  "vitrinePageDomain": ""
+  "vitrinePageGitSSH": "git@github.com:Username/repository.git",
+  "vitrinePageDomain": "username.github.io"
 }
