@@ -1,8 +1,10 @@
 {
+  "tradersName": "John",
+  "showAvatar": false,
   "apiHost": "https://api.bybit.com",
   "apiKey": "",
   "apiSecret": "",
   "apiRecvWindow": 5000,
-  "vitrinePageGitSSH": "git@github.com:Username/repository.git",
-  "vitrinePageDomain": "username.github.io"
+  "vitrinePageGitSSH": "",
+  "vitrinePageDomain": ""
 }

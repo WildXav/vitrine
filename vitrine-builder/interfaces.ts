@@ -25,6 +25,8 @@ export interface BybitPnl {
 }
 
 export interface TradeData {
+  tradersName: string
+  showAvatar: boolean
   updatedAt: number
   profitEvolution: number[]
   stats: {

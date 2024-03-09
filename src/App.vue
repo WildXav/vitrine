@@ -8,6 +8,8 @@ import { computed, ref } from 'vue'
 import type { PeriodData } from '@/interfaces/period-data'
 import TradeData from '@/trade_data.json'
 
+const tradersName = TradeData.tradersName
+const showAvatar = TradeData.showAvatar
 const lastUpdatedStr = dayjs.unix(TradeData.updatedAt).fromNow()
 const statsPanels: StatsPanelDef[] = [
   {
@@ -38,12 +40,12 @@ const activePanelData: ComputedRef<PeriodData | null> = computed(() => {
   >
     <header class="navbar p-1">
       <div class="flex-1">
-        <div class="avatar">
+        <div class="avatar" v-if="showAvatar">
           <div class="w-10 mr-2 mask mask-triangle">
             <img src="/avatar.png" alt="avatar" />
           </div>
         </div>
-        <h1 class="text-xl font-bold">Xav's Trading Journey</h1>
+        <h1 class="text-xl font-bold">{{ tradersName }}'s Trading Journey</h1>
       </div>
 
       <div class="flex-none">

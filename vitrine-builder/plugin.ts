@@ -67,18 +67,22 @@ async function generateTradeData(): Promise<void> {
 
   console.log(`Retrieving PnLs from ${startDate.format('LL')}...`)
 
-  while (dayjs().isAfter(startDate)) {
-    ;(await getPnlsForPeriod(startDate.valueOf()))
-      .filter((pnl) => !pnls.find((p) => p.orderId === pnl.orderId))
-      .forEach((pnl) => pnls.push(pnl))
-    startDate = startDate.add(6, 'day')
+  if (config.apiHost && config.apiKey && config.apiSecret) {
+    while (dayjs().isAfter(startDate)) {
+      ;(await getPnlsForPeriod(startDate.valueOf()))
+        .filter((pnl) => !pnls.find((p) => p.orderId === pnl.orderId))
+        .forEach((pnl) => pnls.push(pnl))
+      startDate = startDate.add(6, 'day')
+    }
+    pnls.sort((a, b) => Number(a.updatedTime) - Number(b.updatedTime))
   }
-  pnls.sort((a, b) => Number(a.updatedTime) - Number(b.updatedTime))
 
   console.log(`Done. PnL Count: ${pnls.length}`)
 
   console.log('Evaluating Performance')
   const data: TradeData = {
+    tradersName: config.tradersName,
+    showAvatar: config.showAvatar,
     updatedAt: dayjs().unix(),
     profitEvolution: computeEvolution(pnls),
     stats: {
@@ -95,6 +99,8 @@ async function generateTradeData(): Promise<void> {
 async function resetJsonFile(): Promise<void> {
   console.log('\nCleaning up trade_data.json')
   const data: TradeData = {
+    tradersName: 'John',
+    showAvatar: false,
     updatedAt: 0,
     profitEvolution: computeEvolution([]),
     stats: {
@@ -107,7 +113,7 @@ async function resetJsonFile(): Promise<void> {
 }
 
 async function pushChanges(): Promise<void> {
-  if (!config.vitrinePageGitSSH) {
+  if (!config.vitrinePageGitSSH || !config.vitrinePageDomain) {
     return
   }
 
@@ -116,10 +122,8 @@ async function pushChanges(): Promise<void> {
   const repoDir = 'repo'
   const repoPath = path.join(distPath, repoDir)
 
-  if (config.vitrinePageDomain) {
-    console.log('Writing CNAME file')
-    fs.writeFileSync(path.join(distPath, 'CNAME'), config.vitrinePageDomain, 'utf8')
-  }
+  console.log('Writing CNAME file')
+  fs.writeFileSync(path.join(distPath, 'CNAME'), config.vitrinePageDomain, 'utf8')
 
   console.log('Updating remote page')
 
