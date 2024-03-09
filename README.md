@@ -59,3 +59,8 @@ As an example here is the config that I use.
 ```sh
 npm run build
 ```
+
+## To do
+- Dynamically set HTML title
+- Bypass PnL retrieval when doing `preview` or `serve`
+- TBD
