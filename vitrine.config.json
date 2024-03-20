@@ -1,6 +1,7 @@
 {
   "tradersName": "John",
   "showAvatar": false,
+  "startDate": "2024-01-01",
   "apiHost": "https://api.bybit.com",
   "apiKey": "",
   "apiSecret": "",

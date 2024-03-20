@@ -63,7 +63,7 @@ async function getPnlsForPeriod(startTime: number): Promise<BybitPnl[]> {
 
 async function generateTradeData(): Promise<void> {
   const pnls: BybitPnl[] = []
-  let startDate = dayjs().dayOfYear(1)
+  let startDate = dayjs(config.startDate)
 
   console.log(`Retrieving PnLs from ${startDate.format('LL')}...`)
 
